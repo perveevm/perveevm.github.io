@@ -1,6 +1,6 @@
 class OpenWeatherMapAPI {
     constructor() {
-        this.key = 'b73039e571e0d2ca35644897ae5c023f';
+        this.key = '4748a23f80e52a1d3e9a0a827c76c2ca';
     }
 
     async getByCityName(cityName) {
