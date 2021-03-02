@@ -118,7 +118,7 @@ async function addToFavourites(event) {
         let response = await weatherAPI.getByCityName(city).catch(() => {
             errorHandler(`Ошибка во время загрузки погоды в городе ${city}.`);
         });
-        if (response.code === 200) {
+        if (response.cod === 200) {
             favourites = getFavouritesFromLocalStorage();
             if (favourites.includes(response.name)) {
                 errorHandler('Город уже добавлен в Избранное.');
@@ -126,7 +126,6 @@ async function addToFavourites(event) {
                 localStorage.setItem(favouritesLocalStorageID, JSON.stringify([...favourites, response.name]));
                 updateFavourites();
             }
-
         } else {
             errorHandler(`Город ${getSmallCityName(city, 20)} не найден.`);
         }
